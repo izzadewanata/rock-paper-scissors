@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css" />
+    <title>Mini Game | Designed by Izza S</title>
+
+    <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>  
+</head>
+<body>
+    <div class="container">
+        <h1 class="heading">Rock Paper Scissors</h1>
+        <video 
+            id="video" 
+            class="container_video"  
+        ></video>
+        <div class="container_interactive">
+            <div class="left_side">
+                <button id="startVideo" class="start_video">Start Video</button>
+                <button id="startGame" class="start_game">Start Round</button>
+            </div>
+            <div class="right_side">
+                <div id="gesture" class="container_gesture">Waiting for your gesture...</div>
+                <div id="gameResult" class="container_result hide"></div>
+            </div>
+        </div>
+    </div>
+    <div class="front-page">
+        <img 
+            src="background.jpg" 
+            alt="background-picture" 
+            class="bg-image"
+        >
+        <h1 class="heading-fp">
+            About us
+        </h1>
+        <p class="text-fp">
+            Welcome to my<i>Janken</i>, which translates from Japanese to my Rock-Paper-Scissors!
+            <br/><br/>
+            This game involves gesture-based "Rock, Paper, Scissors," allowing players to play against the computer by showing gestures in front of a camera.
+            <br/><br/>
+            The game uses machine learning to recognize hand gestures via a webcam and automatically classifies them.
+            <br/><br/>
+            We hope you like it! If you do, we would love to hear from you. Send your feedback through email <a href="mailto:izza.career@gmail.com">izza.career@gmail.com</a>. Thank you in advance!
+        </p>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
