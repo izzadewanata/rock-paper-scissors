@@ -5,8 +5,8 @@ const gestureElement = document.getElementById('gesture');
 
 // Load the Teachable Machine model
 async function initModel() {
-    const modelURL = "https://teachablemachine.withgoogle.com/models/bnpI4lnXS/model.json";
-    const metadataURL = "https://teachablemachine.withgoogle.com/models/bnpI4lnXS/metadata.json";
+    const modelURL = "https://teachablemachine.withgoogle.com/models/0OjlnLugJ/model.json";
+    const metadataURL = "https://teachablemachine.withgoogle.com/models/0OjlnLugJ/metadata.json";
 
     // Load the model and metadata
     model = await tmImage.load(modelURL, metadataURL);
