@@ -6,15 +6,16 @@
     <link rel="stylesheet" href="./style.css" />
     <title>Mini Game | Designed by Izza S</title>
 
-    <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>  
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>  
 </head>
 <body>
     <div class="container">
         <h1 class="heading">Rock Paper Scissors</h1>
-        <video 
-            id="video" 
+        <div
+            id="container_video" 
             class="container_video"  
-        ></video>
+        ></div>
         <div class="container_interactive">
             <div class="left_side">
                 <button id="startVideo" class="start_video">Start Video</button>
@@ -45,6 +46,6 @@
             We hope you like it! If you do, we would love to hear from you. Send your feedback through email <a href="mailto:izza.career@gmail.com">izza.career@gmail.com</a>. Thank you in advance!
         </p>
     </div>
-    <script src="./script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
