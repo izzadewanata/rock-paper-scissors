@@ -2,6 +2,9 @@
 let model, webcam, maxPredictions;
 const gameResult = document.getElementById('gameResult');
 const gestureElement = document.getElementById('gesture');
+const startVideoButton = document.getElementById('startVideo');
+const containerVideo = document.getElementById('container_video');
+let videoRunning = false; // Track video state
 
 // Load the Teachable Machine model
 async function initModel() {
@@ -16,7 +19,7 @@ async function initModel() {
     webcam = new tmImage.Webcam(400, 400, true); // Width, height, flip
     await webcam.setup(); // Request access to webcam
     await webcam.play();
-    document.getElementById('container_video').appendChild(webcam.canvas);
+    containerVideo.appendChild(webcam.canvas);
 
     // Start webcam update loop
     window.requestAnimationFrame(loop);
@@ -41,9 +44,22 @@ async function predict() {
     return highestPrediction.className;
 }
 
-// Start video when the button is clicked
-document.getElementById('startVideo').addEventListener('click', async () => {
-    await initModel();
+// Start or stop video when the button is clicked
+startVideoButton.addEventListener('click', async () => {
+    if (!videoRunning) {
+        // Start video
+        await initModel();
+        startVideoButton.innerText = "Stop Video";
+        startVideoButton.classList.add("stop");
+        videoRunning = true;
+    } else {
+        // Stop video
+        webcam.stop(); // Stop the webcam
+        containerVideo.innerHTML = ""; // Remove all child elements from container_video
+        startVideoButton.innerText = "Start Video";
+        startVideoButton.classList.remove("stop");
+        videoRunning = false;
+    }
 });
 
 // Start game when the button is clicked
